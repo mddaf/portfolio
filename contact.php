@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Set the recipient email address.
     // Replace with your actual email address.
-    $recipient = "your_email@example.com";
+    $recipient = "md.daf001@gmail.com";
 
-    // Create the email subject.
+    // Create the email subject
     $subject = "New Contact Message from $name";
 
     // Build the email content.
