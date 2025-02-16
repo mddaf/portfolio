@@ -204,27 +204,82 @@
     <main id="main-content">
         <!-- Hero Section with Blue, Green, Orange Gradient -->
         <section id="hero"
-            class="min-h-screen flex flex-col justify-center items-center text-center text-white"
-            style="background-image: url('assets/images/wallpaper_1.jpg'); background-size: cover; background-position: center;"
-            data-aos="fade-in" data-aos-duration="1000">
-            <div class="container mx-auto px-4 py-10 pb-20">
-                <h1 class="text-5xl md:text-7xl font-bold mb-4 ">Hello, I'm MD. Dodi Al Fayed</h1>
-            <p class="text-6xl  mb-8">a <span id="dynamic-text" class="underline text-green-400 dark:text-orange-300">believer</span></p>
-            <script>
-                const texts = ["believer", "student", "learner", "developer"];
-                let index = 0;
-                const dynamicText = document.getElementById("dynamic-text");
-
-                setInterval(() => {
-                    index = (index + 1) % texts.length;
-                    dynamicText.textContent = texts[index];
-                }, 1700);
-            </script>
-            <a href="assets/docs/Md. Dodi Al Fayed_CV - Copy.pdf" download
-                class="bg-white text-blue-500 py-3 px-6 rounded-full hover:bg-blue-500 hover:text-white dark:hover:bg-orange-500 shadow hover:shadow-xl transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Download Resume</a>
-            </div>
-        </section>
+        class="relative min-h-screen flex flex-col justify-center items-center text-center text-white bg-cover bg-center transition-all duration-500"
+        style="background-image: url('assets/images/banner.jpg');"
+        data-aos="fade-in" data-aos-duration="1000">
+        
+        <!-- Light Mode Background -->
+        <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-500 opacity-100 dark:opacity-0"
+             style="background-image: url('assets/images/banner.jpg');">
+        </div>
+      
+        <!-- Dark Mode Background -->
+        <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-500 opacity-0 dark:opacity-100"
+             style="background-image: url('assets/images/wallpaper_1.jpg');">
+        </div>
+      
+        <!-- Content Goes Here -->
+        <div class="container mx-auto px-4 py-10 pb-20 relative z-10">
+          <h1 class="text-5xl md:text-7xl font-bold mb-4">Hello, I'm Md. Dodi Al Fayed</h1>
+          <p class="text-5xl md:text-6xl mb-8">
+            a <span id="dynamic-text" class=" text-green-400 dark:text-yellow-400"></span>
+            <span id="cursor" class="blinking-cursor text-green-400 dark:text-yellow-400">_</span>
+          </p>
+          <a href="assets/docs/Md. Dodi Al Fayed_CV - Copy.pdf" download
+             class="bg-white text-blue-500 py-3 px-6 rounded-full hover:bg-blue-500 hover:text-white dark:hover:bg-orange-500 shadow hover:shadow-xl transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500"
+             data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            Download Resume
+          </a>
+        </div>
+      
+        <!-- Blinking Cursor Style -->
+        <style>
+          .blinking-cursor {
+            display: inline-block;
+            animation: blink-caret 1s step-end infinite;
+          }
+          @keyframes blink-caret {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+          }
+        </style>
+      
+        <!-- Typing Effect Script -->
+        <script>
+            const texts = ["believer", "student", "learner", "developer"];
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const dynamicText = document.getElementById("dynamic-text");
+          
+            function typeEffect() {
+              const currentText = texts[textIndex];
+          
+              if (isDeleting) {
+                dynamicText.textContent = currentText.substring(0, charIndex--);
+              } else {
+                dynamicText.textContent = currentText.substring(0, charIndex++);
+              }
+          
+              // Adjusted speeds: slower typing & deletion
+              let typingSpeed = isDeleting ? 150 : 150;
+          
+              if (!isDeleting && charIndex === currentText.length + 1) {
+                typingSpeed = 1000; // Pause before deleting
+                isDeleting = true;
+              } else if (isDeleting && charIndex === -1) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typingSpeed = 600; // Pause before typing next word
+              }
+              setTimeout(typeEffect, typingSpeed);
+            }
+          
+            typeEffect();
+          </script>
+      </section>
+      
+      
 
         <!-- About Section -->
         <section id="about" class="mb-12" data-aos="fade-up">
