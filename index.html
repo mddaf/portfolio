@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MD. Dodi Al Fayed - Portfolio</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Skip Link styles for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #1d4ed8;
+            color: white;
+            padding: 8px 16px;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Back-to-top button style */
+        #back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            background: #1d4ed8;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        #back-to-top:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 transition-colors duration-300">
+    <!-- Skip Link for Keyboard Navigation -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white bg-opacity-60 backdrop-blur-md dark:bg-gray-900 shadow">
+        <div class="container mx-auto px-4 py-6 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <h1 class="text-2xl font-bold text-yellow-600">MD. Dodi Al Fayed</h1>
+                <!-- Dark Mode Toggle Button -->
+                <button id="dark-mode-toggle" aria-label="Toggle Dark Mode"
+                    class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none transition">
+
+                    <svg id="dark-mode-icon" class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-toggle" class="md:hidden p-2 rounded-full focus:outline-none transition"
+                aria-label="Toggle Navigation Menu">
+                <svg class="w-6 h-6 text-gray-800 dark:text-gray-100" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+            <!-- Desktop Navigation -->
+            <nav id="nav-menu" class="hidden md:block" role="navigation" aria-label="Main Navigation">
+                <ul class="flex space-x-6">
+                    <li><a href="#about"
+                            class="hover:text-green-300 focus:outline-none focus:ring-2 focus:ring-green-300 transition">About</a>
+                    </li>
+                    <li><a href="#skills"
+                            class="hover:text-green-300 focus:outline-none focus:ring-2 focus:ring-green-300 transition">Skills</a>
+                    </li>
+                    <li><a href="#projects"
+                            class="hover:text-green-300 focus:outline-none focus:ring-2 focus:ring-green-300 transition">Projects</a>
+                    </li>
+                    <li><a href="#experience"
+                            class="hover:text-green-300 focus:outline-none focus:ring-2 focus:ring-green-300 transition">Experience</a>
+                    </li>
+                    <li><a href="#education"
+                            class="hover:text-green-300 focus:outline-none focus:ring-2 focus:ring-green-300 transition">Education</a>
+                    </li>
+                    <li><a href="#activities"
+                            class="hover:text-green-300 focus:outline-none focus:ring-2 focus:ring-green-300 transition">Activities</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="hover:text-green-300 focus:outline-none focus:ring-2 focus:ring-green-300 transition">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu"
+            class="md:hidden hidden bg-white bg-opacity-60 backdrop-blur-md dark:bg-gray-900 shadow-lg rounded-lg mt-2">
+            <nav role="navigation" aria-label="Mobile Navigation">
+                <ul class="flex flex-col space-y-4 p-6">
+                    <li><a href="#about"
+                            class="hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">About</a>
+                    </li>
+                    <li><a href="#skills"
+                            class="hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">Skills</a>
+                    </li>
+                    <li><a href="#projects"
+                            class="hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">Projects</a>
+                    </li>
+                    <li><a href="#experience"
+                            class="hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">Experience</a>
+                    </li>
+                    <li><a href="#education"
+                            class="hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">Education</a>
+                    </li>
+                    <li><a href="#activities"
+                            class="hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">Activities</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section with Blue, Green, Orange Gradient -->
+        <section id="hero"
+            class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-blue-500 via-green-500 to-orange-500 text-white"
+            data-aos="fade-in" data-aos-duration="1000">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 ">Hello, I'm MD. Dodi Al Fayed</h1>
+            <p class="text-5xl  mb-8">a <span id="dynamic-text" class="underline">believer</span></p>
+            <script>
+                const texts = ["believer", "student", "learner", "developer."];
+                let index = 0;
+                const dynamicText = document.getElementById("dynamic-text");
+
+                setInterval(() => {
+                    index = (index + 1) % texts.length;
+                    dynamicText.textContent = texts[index];
+                }, 1700);
+            </script>
+            <a href="assets/docs/Md. Dodi Al Fayed_CV - Copy.pdf" download
+                class="bg-white text-blue-500 py-3 px-6 rounded-full hover:bg-yellow-600 hover:text-white shadow hover:shadow-xl transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Download Resume</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="mb-12" data-aos="fade-up">
+            <div class="container mx-auto px-4 py-10 ">
+                <h2 class="text-3xl font-bold mb-4 text-blue-500 dark:text-orange-500">About Me</h2>
+                <div
+                    class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                    <p class="mb-4">
+                        I am a Computer Science and Engineering student with a passion for both software development and
+                        teaching. I leverage my technical skills and project experience to build innovative web
+                        applications and help students grasp complex concepts.
+                    </p>
+                    <p>
+                        I regularly assist university friends and tutor high school students, simplifying challenging
+                        topics to enhance learning and academic growth.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-12" data-aos="fade-up">
+            <div class="container mx-auto px-4 py-10">
+                <h2 class="text-3xl font-bold mb-4 text-blue-500 dark:text-orange-500">Technical & Soft Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Technical Skills Card -->
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-500 dark:text-orange-500">Technical Skills</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold pb-4">Languages</h4>
+                                <p>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+                                            alt="python" width="42" height="42" /></a>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+                                            alt="javascript" width="42" height="42" /></a>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg"
+                                            alt="php" width="42" height="42" /></a>
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold pb-4">Frontend Development</h4>
+                                <p>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
+                                            alt="react" width="42" height="42" /></a>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
+                                            alt="css3" width="42" height="42" /></a>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
+                                            alt="html5" width="42" height="42" /></a>
+                                    <a target="_blank"
+                                        href="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+                                            alt="tailwind" width="42" height="42" /></a>
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold pb-4 pt-6">Backend Development</h4>
+                                <p>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
+                                            alt="nodejs" width="42" height="42" /></a>
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold pt-6 pb-4">Database Management</h4>
+                                <p>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"
+                                            alt="mongodb" width="42" height="42" /></a>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg"
+                                            alt="mysql" width="42" height="42" /></a>
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold pt-6 pb-4">Software</h4>
+                                <p>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg"
+                                            alt="photoshop" width="42" height="42" /></a>
+                                    <a target="_blank" href="https://www.vectorlogo.zone/logos/figma/figma-icon.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma"
+                                            width="42" height="42" /></a>
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold pt-6 pb-4">Others</h4>
+                                <p>
+                                    <a target="_blank"
+                                        href="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg"
+                                            alt="linux" width="42" height="42" /></a>
+                                    <a target="_blank" href="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git"
+                                            width="42" height="42" /></a>
+                                    <a target="_blank" href="https://cdn.worldvectorlogo.com/logos/arduino-1.svg"
+                                        style="display: inline-block;"><img
+                                            src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino"
+                                            width="42" height="42" /></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Soft Skills Card -->
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <h3 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-orange-500">Soft Skills</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                            <div class="border-2 border-gray-300 p-4 rounded-lg">Teaching and Communication</div>
+                            <div class="border-2 border-gray-300 p-4 rounded-lg">Collaboration and Teamwork</div>
+                            <div class="border-2 border-gray-300 p-4 rounded-lg">Problem-Solving</div>
+                            <div class="border-2 border-gray-300 p-4 rounded-lg">Time Management</div>
+                            <div class="border-2 border-gray-300 p-4 rounded-lg">Leadership and Mentorship</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interest Section -->
+        <section id="education" class="mb-12" data-aos="fade-up">
+            <div class="container mx-auto px-4 py-10 ">
+                <h2 class="text-3xl font-bold mb-4 text-blue-500 dark:text-orange-500">Interest</h2>
+                <div
+                    class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                        <p class="mt-2 border-2 border-gray-300 p-4 rounded-lg">Artificial Intelligence</p>
+                        <p class="mt-2 border-2 border-gray-300 p-4 rounded-lg">Machine Learning</p>
+                        <p class="mt-2 border-2 border-gray-300 p-4 rounded-lg">Data Science</p>
+                        <p class="mt-2 border-2 border-gray-300 p-4 rounded-lg">Web Development</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-12" data-aos="fade-up">
+            <div class="container mx-auto px-4 py-10">
+                <h2 class="text-3xl font-bold mb-4 text-blue-500 dark:text-orange-500">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1 Card -->
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <a href="https://bpl-dream-xi.netlify.app/" target="_blank"></a>
+                            <h3 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-orange-500">BPL Dream 11 Cricket Team Builder</h3>
+                        </a>
+                        <a href="https://bpl-dream-xi.netlify.app/" target="_blank">
+                            <img src="assets/images/p1.png" alt="BPL Dream 11 Cricket Team Builder"
+                                class="w-full h-auto rounded-lg mb-4">
+                        </a>
+                        <p class="mt-2">
+                            Developed a web app for cricket team selection within a coin-based budget. Features include
+                            dynamic coin balance tracking, budget alerts, and player filtering to ensure a strategic and
+                            engaging user experience.
+                        </p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">October 2024</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <button
+                                class="font-bold text-green-900 p-4 rounded-lg hover:text-yellow-600 shadow hover:shadow-xl transition-transform transform hover:scale-105"
+                                onclick="openModal('modal1')">Details</button>
+                            <a href="https://github.com/mddaf/dream-11" target="_blank"
+                                class="font-bold text-green-900 p-4 rounded-lg hover:text-yellow-600 shadow hover:shadow-xl transition-transform transform hover:scale-105">View
+                                Code</a>
+                        </div>
+                    </div>
+                    <!-- Project 2 Card -->
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <a href="https://b10a6-pet-adoption-mddaf.surge.sh/" target="_blank">
+                            <h3 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-orange-500">Peddy - Pet Adoption Web Application</h3>
+                        </a>
+                        <a href="https://b10a6-pet-adoption-mddaf.surge.sh/" target="_blank">
+                            <img src="assets/images/p2.png" alt="Peddy - Pet Adoption Web Application"
+                                class="w-full h-auto rounded-lg mb-4">
+                        </a>
+                        <p class="mt-2">
+                            Built a responsive web app for browsing pets, viewing details, and marking favorites.
+                            Utilized ES6 features and the fetch API for dynamic data handling, ensuring a smooth user
+                            experience across devices.
+                        </p>
+                        <p class="text-sm font-bold text-gray-500 dark:text-white mt-1">October 2024</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <button
+                                class="font-bold text-green-900 p-4 rounded-lg hover:text-yellow-600 shadow hover:shadow-xl transition-transform transform hover:scale-105"
+                                onclick="openModal('modal2')">Details</button>
+                            <a href="https://github.com/mddaf/pet-adoption" target="_blank"
+                                class="font-bold text-green-900 p-4 rounded-lg hover:text-yellow-600 shadow hover:shadow-xl transition-transform transform hover:scale-105">View
+                                Code</a>
+                        </div>
+                    </div>
+                    <!-- Project 3 Card -->
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <a href="https://mddaf.github.io/donate-bangladesh/" target="_blank">
+                            <h3 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-orange-500">Donate Bangladesh - Donation Application</h3>
+                        </a>
+                        <a href="https://mddaf.github.io/donate-bangladesh/" target="_blank">
+                            <img src="assets/images/p3.png" alt="Donate Bangladesh - Donation Application"
+                                class="w-full h-auto rounded-lg mb-4">
+                        </a>
+                        <p class="mt-2">
+                            Designed a donation platform enabling contributions to various causes with live balance
+                            tracking, form validation, and dynamic content updates. Enhanced user interaction with
+                            section toggling and confirmation modals.
+                        </p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">September 2024</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <button
+                                class="font-bold text-green-900 p-4 rounded-lg hover:text-yellow-600 shadow hover:shadow-xl transition-transform transform hover:scale-105"
+                                onclick="openModal('modal3')">Details</button>
+                            <a href="https://github.com/mddaf/donate-bangladesh" target="_blank"
+                                class="font-bold text-green-900 p-4 rounded-lg hover:text-yellow-600 shadow hover:shadow-xl transition-transform transform hover:scale-105">View
+                                Code</a>
+                        </div>
+                    </div>
+                    <!-- Project 4 Card -->
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <a href="https://mddaf.github.io/rinterio-tailwind/" target="_blank">
+                            <h3 class="text-2xl font-semibold mb-2 text-blue-500 dark:text-orange-500">Rinterio - Interior Design Landing Page</h3>
+                        </a>
+                        <a href="https://mddaf.github.io/rinterio-tailwind/" target="_blank">
+                            <img src="assets/images/p4.png" alt="Rinterio - Interior Design Landing Page"
+                                class="w-full h-auto rounded-lg mb-4">
+                        </a>
+                        <p class="mt-2">
+                            Created a responsive landing page for an interior design service using Tailwind CSS.
+                            Integrated call-to-action buttons and an inquiry form to boost user engagement while
+                            ensuring cross-device compatibility.
+                        </p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">August 2024</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <button
+                                class="font-bold text-green-900 p-4 rounded-lg hover:text-yellow-600 shadow hover:shadow-xl transition-transform transform hover:scale-105"
+                                onclick="openModal('modal4')">Details</button>
+                            <a href="https://github.com/mddaf/rinterio-tailwind" target="_blank"
+                                class="font-bold text-green-900 p-4 rounded-lg hover:text-yellow-600 shadow hover:shadow-xl transition-transform transform hover:scale-105">View
+                                Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Experience Section -->
+        <section id="experience" class="mb-12" data-aos="fade-up">
+            <div class="container mx-auto px-4 py-10">
+                <h2 class="text-3xl font-bold mb-4 text-blue-500 dark:text-orange-500">Experience & Teaching</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Experience 1 Card -->
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <h3 class="text-2xl font-semibold text-blue-500 dark:text-orange-500">Helping University Friends
+                        </h3>
+                        <p class="mt-2">
+                            Regularly assist friends with university courses by offering guidance and simplifying
+                            complex subjects to enhance their understanding.
+                        </p>
+                    </div>
+                    <!-- Experience 2 Card -->
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <h3 class="text-2xl font-semibold text-blue-500 dark:text-orange-500">Teaching High School
+                            Students</h3>
+                        <p class="mt-2">
+                            Provide tutoring to high school students, focusing on subjects they find challenging. I
+                            break down difficult concepts into simpler terms to boost comprehension.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mb-12" data-aos="fade-up">
+            <div class="container mx-auto px-4 py-10 ">
+                <h2 class="text-3xl font-bold mb-4 text-blue-500 dark:text-orange-500">Education</h2>
+                <div
+                    class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                    <h3 class="text-2xl font-semibold text-blue-500 dark:text-orange-500">B.Sc. (Hons.) in Computer
+                        Science and Engineering</h3>
+                    <p class="mt-2">BRAC University</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">June 2022 - Present</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Co-Curricular Activities Section -->
+        <section id="activities" class="mb-12" data-aos="fade-up">
+            <div class="container mx-auto px-4 py-10">
+                <h2 class="text-3xl font-bold mb-4 text-blue-500 dark:text-orange-500">Co-Curricular Activities &
+                    Achievements</h2>
+                <div class="space-y-4">
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <p>Executive, BRAC University Computer Club (Nov 2024 - Present)</p>
+                    </div>
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <p>Verified Basic Python Developer and 5-star badges on HackerRank (Aug 2023)</p>
+                    </div>
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <p>Verified Basic JavaScript Developer and 5-star badges on HackerRank (Aug 2023)</p>
+                    </div>
+                    <div
+                        class="p-8 border-2 border-gray-300 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-xl transition-transform transform hover:scale-105">
+                        <p>2nd Position at Intra BRAC University Programming Contest (Sep 2022)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Feedback Section -->
+    <section id="feedback" class="mb-12" data-aos="fade-up">
+        <div class="container mx-auto px-4 py-10">
+            <h2 class="text-3xl font-bold mb-4 text-blue-500 dark:text-orange-500">Feedback</h2>
+            <form action="mailto:md.daf001@gmail.com" method="post" enctype="text/plain" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="mt-1 block w-2/3 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                    <input type="email" id="email" name="email" required
+                        class="mt-1 block w-2/3 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300">
+                </div>
+                <div>
+                    <label for="message"
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                    <textarea id="message" name="message" rows="4" required
+                        class="mt-1 block w-2/3 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-gray-300"></textarea>
+                </div>
+                <div>
+                    <button type="submit"
+                        class="bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-yellow-600 hover:text-white shadow hover:shadow-xl transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500">Send
+                        Feedback</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class=" text-white bg-gray-700 dark:bg-gray-800 shadow mt-12" data-aos="fade-in">
+        <div class="container mx-auto px-4 py-8 flex flex-col items-center justify-between gap-5">
+            <div class="text-center">
+                <h3 class="text-2xl font-semibold mb-2">Contact</h3>
+                <p class="mb-1">Phone: <a href="tel:+8801788754810"
+                        class="text-blue-500 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 transition">+8801788754810</a>
+                </p>
+                <p class="mb-1">Email: <a href="mailto:md.daf001@gmail.com"
+                        class="text-blue-500 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 transition">md.daf001@gmail.com</a>
+                </p>
+                <p>Address: TA 160/3, Gudaraghat, Middle Badda</p>
+            </div>
+            <div class="mt-6 md:mt-0 flex space-x-4">
+                <a href="https://www.linkedin.com/in/mddaf/" target="_blank"
+                    class="text-blue-500 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5 11.5h-3v-5.5c0-1.38-1.12-2.5-2.5-2.5s-2.5 1.12-2.5 2.5v5.5h-3v-10h3v1.5c.69-1.19 2.09-2 3.5-2 2.21 0 4 1.79 4 4v6.5z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/mddaf" target="_blank"
+                    class="text-blue-500 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.63 0-12 5.37-12 12 0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.05-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23.95-.26 1.97-.39 2.98-.39 1.01 0 2.03.13 2.98.39 2.3-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.62-2.81 5.65-5.49 5.94.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.69.82.58 4.77-1.59 8.21-6.09 8.21-11.39 0-6.63-5.37-12-12-12z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
+
+    <!-- JavaScript for Interactive Features -->
+    <!-- AOS (Animate On Scroll) Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dark mode toggle using Tailwind dark mode by toggling the "dark" class on the <html> element.
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            // Optionally update dark mode icon (this example uses a simple toggle)
+            const darkModeIcon = document.getElementById('dark-mode-icon');
+            if (document.documentElement.classList.contains('dark')) {
+                darkModeIcon.innerHTML = '<path d=M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>';
+            } else {
+                darkModeIcon.innerHTML = '<path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/>';
+
+            }
+        });
+
+        // Back-to-top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTopButton.style.display = window.pageYOffset > 300 ? 'block' : 'none';
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+
+    <!-- Modals -->
+    <div id="modal1" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full">
+            <h3 class="text-2xl font-semibold mb-4 text-blue-500 dark:text-orange-500">BPL Dream 11 Cricket Team Builder
+            </h3>
+            <div class="overflow-y-auto max-h-96">
+            </div>
+            <button
+                class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                onclick="closeModal('modal1')">Close</button>
+        </div>
+    </div>
+    <div id="modal2" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full">
+            <h3 class="text-2xl font-semibold mb-4 text-blue-500 dark:text-orange-500">Peddy - Pet Adoption Web
+                Application</h3>
+            <div class="overflow-y-auto max-h-96">
+                <h2><strong>Description</strong></h2>
+                <p>Peddy is a web application designed to facilitate the adoption of pets, bringing families together with loving companions. Users can browse through a variety of pets available for adoption, view detailed information, and even like their favorite pets. The application provides a user-friendly interface for both desktop and mobile devices.</p>
+                
+                <h2>Key Features</h2>
+                <ul>
+                    <li><strong>Pet Categories</strong>: Users can explore different categories of pets available for adoption.</li>
+                    <li><strong>Pet Details</strong>: Detailed information about each pet, including breed, age, gender, and price.</li>
+                    <li><strong>Adoption Process</strong>: Users can initiate the adoption process, complete with a countdown timer for excitement.</li>
+                    <li><strong>Like Feature</strong>: Users can like their favorite pets, which are displayed in a dedicated section.</li>
+                    <li><strong>Responsive Design</strong>: The application is fully responsive, providing a seamless experience across various devices.</li>
+                </ul>
+                
+                <h2>ES6 Features Used</h2>
+                <ul>
+                    <li><strong>Arrow Functions</strong>: Used for concise function expressions.</li>
+                    <li><strong>Template Literals</strong>: For constructing HTML elements and strings dynamically.</li>
+                    <li><strong>Destructuring Assignment</strong>: To extract data from objects more conveniently.</li>
+                    <li><strong>Spread Operator</strong>: For cloning arrays and combining elements.</li>
+                    <li><strong>Promises</strong>: For handling asynchronous operations with fetch API.</li>
+                </ul>
+            </div>
+            <button
+                class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                onclick="closeModal('modal2')">Close</button>
+        </div>
+    </div>
+    <div id="modal3" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full">
+            <h3 class="text-2xl font-semibold mb-4 text-blue-500 dark:text-orange-500">Donate Bangladesh - Donation
+                Application</h3>
+                <div class="overflow-y-auto max-h-96">
+                </div>
+            <button
+                class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                onclick="closeModal('modal3')">Close</button>
+        </div>
+    </div>
+    <div id="modal4" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full">
+            <h3 class="text-2xl font-semibold mb-4 text-blue-500 dark:text-orange-500">Interiorio - Interior Design
+                Landing Page</h3>
+                <div class="overflow-y-auto max-h-96">
+                </div>
+            <button
+                class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                onclick="closeModal('modal4')">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>
