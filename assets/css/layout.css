@@ -1,0 +1,170 @@
+/* ═══════════════════════════════════════════════════════════
+   LAYOUT.CSS — Section Grids, Containers, Breakpoints
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Section backgrounds (transparent for 3D canvas) ── */
+.section-void { background: transparent; }
+.section-deep { background: transparent; }
+
+/* ── Overlay panel — minimal tint over 3D canvas, NO blur ── */
+.overlay-panel {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: rgba(5, 6, 20, 0);  /* tinted but see-through enough for 3D */
+  border: 1px solid rgba(30, 45, 107, 0.5);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);           /* compact — 2rem, not 4rem */
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+}
+.overlay-panel.slide-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.overlay-panel.slide-hidden.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sections: thin vertical padding so 3D world peeks between panels */
+section {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-lg) var(--space-md);  /* 2rem vertical, not 8rem */
+}
+
+/* Container inside overlay-panel: no extra padding — panel handles it */
+.overlay-panel > .container {
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Standalone container (hero etc) */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-lg);
+}
+
+/* ── Section inner (two-column grid) ── */
+.section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xxl);
+  align-items: center;
+}
+
+/* ── Section label (mono uppercase) ── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent-pulsar);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+/* ── Skills grid ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: var(--space-md);
+}
+
+/* ── Projects grid ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+  max-height: 850px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 1rem;
+}
+
+/* ── Contact grid ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xxl);
+  margin-top: var(--space-xl);
+  align-items: start;
+}
+
+/* ── GitHub stats grid ── */
+.github-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+  justify-items: center;
+}
+
+/* ── Timeline layout ── */
+.timeline {
+  position: relative;
+  margin-top: var(--space-xl);
+  padding-left: 120px;
+}
+
+/* ── Footer layout ── */
+.site-footer {
+  background: rgba(3, 4, 15, 0.85);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--space-border);
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  position: relative;
+  z-index: 2;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .section-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-height: 900px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .github-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 0;
+  }
+
+  .container {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ── Mobile background fallback when Three.js is disabled ── */
+.mobile-mode {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(108, 99, 255, 0.12) 0%, var(--space-void) 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(0, 212, 255, 0.08) 0%, var(--space-void) 60%);
+}

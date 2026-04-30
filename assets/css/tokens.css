@@ -1,0 +1,72 @@
+/* ═══════════════════════════════════════════════════════════
+   TOKENS.CSS — The Single Source of Truth
+   Cosmic Deep Space Design System
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── BACKGROUNDS (use only these for section backgrounds) ── */
+  --space-void:    #03040f;   /* page background — the deepest black */
+  --space-deep:    #080d1e;   /* section alternating bg */
+  --space-mid:     #0d1535;   /* card backgrounds */
+  --space-surface: #131d45;   /* elevated surfaces, hover states */
+  --space-border:  #1e2d6b;   /* borders, dividers */
+
+  /* ── ACCENTS (only these three, never add more) ── */
+  --accent-nebula: #6c63ff;   /* PRIMARY: purple. CTAs, active states, headings */
+  --accent-pulsar: #00d4ff;   /* SECONDARY: cyan. Links, tags, secondary buttons */
+  --accent-nova:   #ff6b9d;   /* TERTIARY: pink. Achievements, highlights only */
+
+  /* ── TEXT HIERARCHY ── */
+  --text-primary:  #f0f4ff;   /* body copy — brighter for readability over 3D */
+  --text-secondary:#a0aad4;   /* captions, labels, nav links */
+  --text-muted:    #4d5888;   /* disabled, placeholder */
+  --text-star:     #ffffff;   /* headings, hero name */
+
+  /* ── GLOW (additive blending only) ── */
+  --glow-nebula:   rgba(108, 99, 255, 0.2);
+  --glow-pulsar:   rgba(0, 212, 255, 0.2);
+
+  /* ── SPACING SCALE ── */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  2rem;
+  --space-xl:  4rem;
+  --space-xxl: 8rem;
+
+  /* ── TYPOGRAPHY ── */
+  --font-display: 'Syne', 'Space Grotesk', sans-serif;    /* h1–h3 ONLY */
+  --font-body:    'Inter', 'DM Sans', sans-serif;          /* all body copy */
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;/* tags, labels, code */
+
+  /* ── TYPE SCALE ── */
+  --text-h1:   clamp(2.5rem, 5vw, 4.5rem);
+  --text-h2:   clamp(1.75rem, 3vw, 2.5rem);
+  --text-h3:   1.25rem;
+  --text-body: 1rem;
+  --text-sm:   0.875rem;
+
+  /* ── BORDERS ── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-pill: 100px;
+
+  /* ── MOTION ── */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:    cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:  200ms;
+  --dur-med:   400ms;
+  --dur-slow:  800ms;
+
+  /* ── 3D OBJECT COLORS (v5 ENHANCED) ── */
+  --obj-planet:    #2a1f6e;
+  --obj-crystal:   #00d4ff;
+  --obj-tablet:    #1e2d6b;
+  --obj-portal:    #6c63ff;
+
+  /* ── ENHANCED INTERACTION TOKENS ── */
+  --magnetic-strength: 0.4;
+  --constellation-opacity: 0.15;
+  --nebula-fog-density: 0.08;
+}
