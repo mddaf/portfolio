@@ -26,49 +26,40 @@ The hidden pulsar is at Z = -120, X = 15.
 console.log('%cGitHub: https://github.com/mddaf', 'color: #00d4ff; font-family: monospace;');
 console.log('%cBuilt with Three.js · GSAP · Raw ambition', 'color: #7b86c0; font-family: monospace;');
 
-// ── Mobile detection ──
+// ── Mobile detection (kept for reference, 3D loads on ALL devices) ──
 const isMobile = window.innerWidth <= 768 ||
   /Android|iPhone|iPad/i.test(navigator.userAgent);
 
-if (!isMobile) {
-  // Import scene infrastructure + 3D world
-  // scene.js creates renderer, composer, animation loop
-  // world.js creates starfield (Module 1), planet+objects (Module 2+)
-  import('./scene.js').then(() => {
-    return import('./world.js');
-  }).then(() => {
-    return import('./skills-galaxy.js');
-  }).then(() => {
-    return import('./github-quasar.js');
-  }).then(() => {
-    return import('./journey-wormhole.js');
-  }).then(() => {
-    return import('./contact-supernova.js');
-  }).then(() => {
-    return import('./journey.js');
-  }).then(() => {
-    return Promise.all([
-      import('./cursor.js'),
-      import('./nebula.js'),
-    ]);
-  }).then(([, nebulaModule]) => {
-    import('./scene.js').then(({ setNebulaScene }) => {
-      setNebulaScene(nebulaModule.nebulaScene, nebulaModule.nebulaCamera);
-    });
-    return import('./audio.js');
-  }).then(() => {
-    return import('./magnetic.js');
-  }).then(() => {
-    console.log('[v5] All modules initialized');
-  }).catch(err => {
-    console.error('[v5] 3D init failed:', err);
+// Import scene infrastructure + 3D world on ALL devices
+import('./scene.js').then(() => {
+  return import('./world.js');
+}).then(() => {
+  return import('./skills-galaxy.js');
+}).then(() => {
+  return import('./github-quasar.js');
+}).then(() => {
+  return import('./journey-wormhole.js');
+}).then(() => {
+  return import('./contact-supernova.js');
+}).then(() => {
+  return import('./journey.js');
+}).then(() => {
+  return Promise.all([
+    import('./cursor.js'),
+    import('./nebula.js'),
+  ]);
+}).then(([, nebulaModule]) => {
+  import('./scene.js').then(({ setNebulaScene }) => {
+    setNebulaScene(nebulaModule.nebulaScene, nebulaModule.nebulaCamera);
   });
-} else {
-  // Hide canvas, apply CSS fallback
-  const bgCanvas = document.getElementById('bg-canvas');
-  if (bgCanvas) bgCanvas.style.display = 'none';
-  document.body.classList.add('mobile-mode');
-}
+  return import('./audio.js');
+}).then(() => {
+  return import('./magnetic.js');
+}).then(() => {
+  console.log('[v5] All modules initialized');
+}).catch(err => {
+  console.error('[v5] 3D init failed:', err);
+});
 
 // ── Preloader ──
 window.addEventListener('load', () => {
