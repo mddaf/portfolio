@@ -39,7 +39,7 @@ function initYTPlayer() {
       events: {
         'onReady': (event) => {
           ytReady = true;
-          event.target.setVolume(30);
+          event.target.setVolume(100);
           if (audioEnabled) {
             event.target.playVideo();
           }
